@@ -1,0 +1,5 @@
+*rpm
+.vagrant
+packer_*
+*.box
+*output*

@@ -1,0 +1,13 @@
+{
+  "disk_size": "5120",
+  "headless": "false",
+  "install_mysql": "true",
+  "install_postgres": "false",
+  "iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
+  "iso_checksum_type": "md5",
+  "iso_url": "http://centos.crazyfrogs.org/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
+  "output_directory": "output",
+  "ssh_password": "vagrant",
+  "ssh_username": "vagrant",
+  "vm_name": "sonar-virtualbox"
+}
