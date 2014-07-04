@@ -1,4 +1,4 @@
-if [ $install_postgres = "true" ]
+if [ $install_mysql = "true" ]
 then
   yum install -y mysql-server
   chkconfig mysqld on
