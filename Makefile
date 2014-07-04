@@ -6,14 +6,14 @@ devtools-vbox:
 				--only 'virtualbox-builder'  \
 				devtools/devtools-vbox.json
 
-sonar-vbox:
+sonar-vbox: jdk8
 	packer build \
 				--force \
 				-var-file=sonar/variables.json  \
 				--only 'virtualbox-builder'  \
 				sonar/sonar-vbox.json
 
-jenkins-vbox:
+jenkins-vbox: jdk8
 	packer build \
 				--force \
 				--only 'virtualbox-builder'  \
@@ -21,18 +21,18 @@ jenkins-vbox:
 				jenkins/jenkins-vbox.json
 
 jdk8:
-	wget --no-cookies \
+	if [ ! -f "resources/jdk-8-linux-x64.rpm" ]; then wget --no-cookies \
 	--no-check-certificate \
 	--header "Cookie: oraclelicense=accept-securebackup-cookie" \
 	"http://download.oracle.com/otn-pub/java/jdk/8-b132/jdk-8-linux-x64.rpm" \
-	-O resources/jdk-8-linux-x64.rpm
+	-O resources/jdk-8-linux-x64.rpm; fi;
 
 jdk7:
-	wget --no-cookies \
+	if [ ! -f "resources/jdk-7-linux-x64.rpm" ]; then wget --no-cookies \
 	--no-check-certificate \
 	--header "Cookie: oraclelicense=accept-securebackup-cookie" \
 	"http://edelivery.oracle.com/otn-pub/java/jdk/7u55-b13/jdk-7u55-linux-x64.rpm" \
-	-O resources/jdk-7-linux-x64.rpm
+	-O resources/jdk-7-linux-x64.rpm; fi;
 
 jdk6:
 	wget --no-cookies \
