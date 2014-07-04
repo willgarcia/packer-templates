@@ -12,7 +12,7 @@ Build:
 $ make sonar-vbox
 ```
 
-Edit `centos/variables.json` to customize the box.
+Edit `variables.json` to customize the box.
 
 Usage:
 ```shell
