@@ -1,4 +1,11 @@
 export PACKER_LOG=1
+centos65-vbox:
+	packer build \
+				--force \
+				-var-file=devtools/variables.json  \
+				--only 'virtualbox-builder'  \
+				centos65/centos65-vbox.json
+
 devtools-vbox:
 	packer build \
 				--force \

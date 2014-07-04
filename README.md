@@ -13,6 +13,18 @@ Prerequisites
 * Virtualbox >= 4.3.10
 * Packer >= 0.5.2
 
+Template CentOS
+---------------
+
+This template provides:
+
+* a minimal 64-bit CentOS 6.5
+
+Build:
+```shell
+$ make centos65-vbox
+```
+
 Template CentOS / Jenkins
 -------------------------
 
