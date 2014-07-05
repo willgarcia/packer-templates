@@ -34,6 +34,8 @@
       "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
       "scripts": [
         "scripts/centos/centos-init.sh",
+        "scripts/virtualbox/vbox-guestadditions.sh",
+        "scripts/vagrant/vagrant-ssh.sh",
         "scripts/centos/centos-cleanup.sh"
       ],
       "type": "shell"
