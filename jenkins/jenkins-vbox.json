@@ -43,6 +43,7 @@
         "scripts/vagrant/vagrant-ssh.sh",
         "scripts/jdk/jdk8-install.sh",
         "jenkins/scripts/jenkins-install.sh",
+        "scripts/git/git-install.sh",
         "scripts/centos/centos-cleanup.sh"
       ],
       "type": "shell"

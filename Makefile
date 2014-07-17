@@ -1,4 +1,3 @@
-export PACKER_LOG=1
 centos65-vbox:
 	packer build \
 				--force \
@@ -6,7 +5,7 @@ centos65-vbox:
 				--only 'virtualbox-builder'  \
 				centos65/centos65-vbox.json
 
-devtools-vbox:
+devtools-vbox: ruby2
 	packer build \
 				--force \
 				-var-file=devtools/variables.json  \
@@ -42,10 +41,14 @@ jdk7:
 	-O resources/jdk-7-linux-x64.rpm; fi;
 
 jdk6:
-	wget --no-cookies \
+	if [ ! -f "resources/ruby-2.1.2.tar.gz" ]; then wget --no-cookies \
 	--no-check-certificate \
 	--header "Cookie: oraclelicense=accept-securebackup-cookie" \
 	"http://download.oracle.com/otn/java/jdk/6u45-b06/jdk-6u45-linux-x64-rpm.bin" \
-	-O resources/jdk-6u45-linux-x64-rpm.bin
+	-O resources/jdk-6u45-linux-x64-rpm.bin; fi;
 
-.PHONY: jdk6 jdk7 jdk8 jenkins-vbox sonar-vbox devtools-vbox
+ruby2:
+	if [ ! -f "resources/ruby-2.1.2.tar.gz" ]; then wget http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz \
+	-O resources/ruby-2.1.2.tar.gz; fi;
+
+.PHONY: jdk6 jdk7 jdk8 jenkins-vbox ruby2 sonar-vbox devtools-vbox jenkins-vbox centos65-vbox

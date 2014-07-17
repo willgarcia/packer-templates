@@ -34,13 +34,51 @@
       "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
       "scripts": [
         "scripts/centos/centos-init.sh",
-        "devtools/scripts/devtools-git.sh",
-        "devtools/scripts/devtools-js.sh",
-        "devtools/scripts/devtools-zsh.sh",
-        "devtools/scripts/devtools-mailcatcher.sh",
+        "scripts/git/git-install.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "type": "file",
+      "source": "resources/ruby-2.1.2.tar.gz",
+      "destination": "/tmp/ruby-2.1.2.tar.gz"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
+        "scripts/ruby/ruby-install.sh",
+        "scripts/databases/sqlite-install.sh",
+        "devtools/scripts/devtools-mailcatcher.sh"
+        ],
+        "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
+        "scripts/pip/pip-install.sh",
+        "devtools/scripts/devtools-httpie.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
+        "devtools/scripts/devtools-js.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
         "devtools/scripts/devtools-php56.sh",
         "devtools/scripts/devtools-php-mailcatcher.sh",
-        "devtools/scripts/devtools-composer.sh",
+        "devtools/scripts/devtools-composer.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
         "scripts/centos/centos-cleanup.sh"
       ],
       "type": "shell"

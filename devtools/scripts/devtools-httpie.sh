@@ -1,1 +1,1 @@
-yum install -y httpie
+pip install httpie
