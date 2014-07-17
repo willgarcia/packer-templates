@@ -1,5 +1,5 @@
 Template CentOS / Jenkins
--------------------------
+=========================
 
 This template provides:
 
@@ -7,21 +7,28 @@ This template provides:
 * Java JDK 1.8 / 1.7
 * Jenkins (latest version)
 
-Build:
+Build
+-----
+
 ```shell
 $ make jenkins-vbox
 ```
 
 Edit `variables.json` to customize the box.
 
-Usage:
+Usage
+-----
+
 ```shell
-$ vagrant up
+$ vagrant init wgarcia/centos65-jenkins
 ```
 
-UI
---
+Port forwarding:
 
-* Guest port: 8080
+Edit the generated `Vagrantfile` to enable port forwarding on 8080
 
-URL: `http://localhost:2280/`
+```ruby
+config.vm.network "forwarded_port", guest: 8080, host: 8080
+```
+
+Access to Jenkins via this URL: `http://localhost:8080/`

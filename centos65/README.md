@@ -14,5 +14,5 @@ Edit `variables.json` to customize the box.
 
 Usage:
 ```shell
-$ vagrant up
+$ vagrant init wgarcia/centos65
 ```

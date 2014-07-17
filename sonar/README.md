@@ -16,7 +16,15 @@ Edit `variables.json` to customize the box.
 
 Usage:
 ```shell
-$ vagrant up
+$ vagrant init wgarcia/centos65-sonar-mysql
+```
+
+Port forwarding:
+
+Edit the generated `Vagrantfile` to enable port forwarding on 9000
+
+```ruby
+config.vm.network "forwarded_port", guest: 9000, host: 9000
 ```
 
 Database
@@ -35,4 +43,4 @@ Sonar UI
 * Password: `admin`
 * Guest port: 9000
 
-URL: `http://localhost:2280/`
+URL: `http://localhost:9000/`

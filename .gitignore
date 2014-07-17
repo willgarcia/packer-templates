@@ -3,3 +3,5 @@
 packer_*
 *.box
 *output*
+Vagrantfile
+resources/*.tar.gz
