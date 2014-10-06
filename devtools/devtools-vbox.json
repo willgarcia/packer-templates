@@ -89,6 +89,13 @@
           "devtools/scripts/devtools-vim.sh"
       ],
       "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
+          "devtools/scripts/devtools-httpd.sh"
+      ],
+      "type": "shell"
     }
   ],
   "variables": {
