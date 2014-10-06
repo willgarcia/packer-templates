@@ -82,6 +82,13 @@
         "scripts/centos/centos-cleanup.sh"
       ],
       "type": "shell"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
+      "scripts": [
+          "devtools/scripts/devtools-vim.sh"
+      ],
+      "type": "shell"
     }
   ],
   "variables": {
