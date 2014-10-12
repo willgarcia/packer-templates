@@ -70,8 +70,9 @@
     {
       "execute_command": "chmod +x {{ .Path }}; sudo {{ .Vars }} {{ .Path }}",
       "scripts": [
-        "devtools/scripts/devtools-php56.sh",
+        "devtools/scripts/devtools-php-56.sh",
         "devtools/scripts/devtools-php-mailcatcher.sh",
+        "devtools/scripts/devtools-php-csfixer.sh",
         "devtools/scripts/devtools-composer.sh"
       ],
       "type": "shell"
